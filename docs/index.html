@@ -7,7 +7,6 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.7.0/polyfill.js"></script>
-    <!-- <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.4.0/webcomponents-bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.4.0/custom-elements-es5-adapter.js"></script>
     <script src="main-es5.js"></script>
@@ -16,15 +15,16 @@
     <app-button caption="hm"></app-button>
 
     <script>
-      // WebComponents.waitFor(function() {
-      const el = document.querySelector("app-button");
-      el.setAttribute("caption", "hello");
-      el.handler = {
-        onClick: function() {
-          console.log("hello!");
-        }
-      };
-      // });
+      window.addEventListener("DOMContentLoaded", function() {
+        const el = document.querySelector("app-button");
+        el.setAttribute("caption", "hello");
+
+        el.handler = {
+          onClick: function() {
+            console.log("hello!");
+          }
+        };
+      });
     </script>
   </body>
 </html>
