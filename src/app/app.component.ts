@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = 'a-c';
+  @Input()
+  public handler = {
+    onClick() {
+      console.log("test");
+    }
+  };
+  @Input()
+  public caption = 'test';
+
+  public onClick() {
+    this.handler.onClick();
+  }
 }
